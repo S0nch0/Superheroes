@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import retrofit2.Call
 
 class RecyclerViewAdapter(private val items: List<Superhero>): RecyclerView.Adapter<RecyclerViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
@@ -15,7 +14,7 @@ class RecyclerViewAdapter(private val items: List<Superhero>): RecyclerView.Adap
         return RecyclerViewHolder(itemView)
     }
 
-    override fun getItemCount(): Int =items.size
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         holder.name.text = items[position].name
@@ -30,9 +29,9 @@ class RecyclerViewAdapter(private val items: List<Superhero>): RecyclerView.Adap
 }
 
 class RecyclerViewHolder(view: View): RecyclerView.ViewHolder(view){
-    val name = view.findViewById<TextView>(R.id.name)
-    val fullName = view.findViewById<TextView>(R.id.fullName)
-    val gender = view.findViewById<TextView>(R.id.gender)
-    val race = view.findViewById<TextView>(R.id.race)
-    val listImage = view.findViewById<ImageView>(R.id.imageView)
+    val name: TextView = view.findViewById(R.id.name)
+    val fullName: TextView = view.findViewById(R.id.fullName)
+    val gender: TextView = view.findViewById(R.id.gender)
+    val race: TextView = view.findViewById(R.id.race)
+    val listImage: ImageView = view.findViewById(R.id.imageView)
 }

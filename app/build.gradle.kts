@@ -49,6 +49,9 @@ dependencies {
     implementation (libs.adapter.rxjava2)
     implementation (libs.rxandroid)
     implementation (libs.google.gson)
+    implementation (libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.lifecycle.viewmodel.android)
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
