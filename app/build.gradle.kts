@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -51,9 +53,15 @@ dependencies {
     implementation (libs.google.gson)
     implementation (libs.kotlinx.coroutines.android)
     implementation(libs.androidx.lifecycle.viewmodel.android)
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+kapt{
+    correctErrorTypes = true
 }
